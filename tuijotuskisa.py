@@ -26,7 +26,7 @@ class Peikko:
         self.katseen_voima = random.randint(2, 4)
 
     def _arvo_sanat(self, tavut, n, erotin, p=0.5):
-        """Muodostaa satunnaisen tekstin annetuista tavuista.
+        """Muodostaa satunnaisen tekstin annetuista tavuista
 
         :param tavut: ne tavut, joita palautettava teksti voi sisältää
         :type tavut: Union[list[str], tuple[str]]

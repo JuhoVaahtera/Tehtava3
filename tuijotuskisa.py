@@ -2,7 +2,37 @@ import random
 import time
 
 
-class Peikko:
+
+
+
+class Olento:
+    """Luokka, joka kuvaa Olennon.
+
+    :ivar nimi: olennon nimi
+    :type nimi: str
+    :ivar rohkeus: olennon rohkeus, arvotaan
+    :type rohkeus: int
+    :ivar katseen_voima: olennon katseen voimakkuus, arvotaan
+    :type katseen_voima: int
+
+    Julkiset metodit
+        arvo_hurraus()
+    """
+    def __init__(self, nimi, pohjarohkeus=1, pohjavoima=1):
+        """Konstruktori."""
+        self.nimi = nimi
+        self.rohkeus = random.randint(pohjarohkeus, pohjarohkeus + 4)
+        self.katseen_voima = random.randint(pohjavoima, pohjavoima + 3)
+
+    def arvo_hurraus(self):
+        """Palauttaa satunnaisen hurraushuudahduksen.
+
+        :return: hurraava huudahdus
+        :rtype: str
+        """
+        pass
+
+class Peikko(Olento):
     """Luokka, joka kuvaa Peikon.
 
     :ivar nimi: peikon nimi, arvotaan
@@ -84,7 +114,7 @@ class Luolapeikko(Peikko):
         
 ### Kirjoita luokka Sankari tähän.
 
-class Sankari:
+class Sankari(Olento):
 
     """:ivar nimi: sankarin nimi, annetaan parametrina
     :type nimi: str
@@ -207,41 +237,7 @@ while sankari.rohkeus > 0:
     time.sleep(1.5)
 
 
-class Olento:
-    """Luokka, joka kuvaa hahmoa, jolla on nimi, rohkeus ja katseen voima.
 
-    :ivar nimi: olennon nimi
-    :type nimi: str
-    :ivar rohkeus: olennon rohkeus
-    :type rohkeus: int
-    :ivar katseen_voima: olennon katseen voimakkuus
-    :type katseen_voima: int
-    """
-
-    NIMITAVUT = ("Ur", "Gar", "Grah", "Gur", "Kan", "Kazah", "Bar", "Bazh", "Ragh", "Rudz")
-    RIEMUTAVUT = ("Agh", "Ugh", "Ourgh", "Drar", "Brar", "Dza", "Gra", "Gur", "Rah", "Urgh", "Ra")
-
-    def __init__(self, nimi, rohkeus, katseen_voima):
-        """Konstruktori."""
-        self.nimi = nimi
-        self.rohkeus = rohkeus
-        self.katseen_voima = katseen_voima
-
-    def arvo_hurraus(self):
-        """Palauttaa satunnaisen hurraushuudahduksen.
-
-        :return: hurraava huudahdus
-        :rtype: str
-        """
-        return random.choice(["Hienoa!", "Mahtavaa!", "Upeaa!", "Sheeesh!", "SIuuuuu!"])
-
-    def hurraa(self):
-        """Tulostaa satunnaisen hurrauksen olennolle.
-
-        :return: hurraava huudahdus
-        :rtype: str
-        """
-        print(f'{self.nimi}: "{self.arvo_hurraus()}!"')
 
 
 time.sleep(1.5)

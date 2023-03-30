@@ -67,7 +67,7 @@ class Vuorenpeikko(Peikko):
         super().__init__()
         self.rohkeus = random.randint(4, 8)
         self.katseen_voima = random.randint(2, 4)
-        self.nimi = "Vuorenpeikko " + self.nimi
+
 
 
 class Luolapeikko(Peikko):
@@ -81,7 +81,6 @@ class Luolapeikko(Peikko):
         super().__init__()
         self.rohkeus = random.randint(4, 8)
         self.katseen_voima = random.randint(2, 4)
-        self.nimi = "Luolapeikko " + self.nimi
         
 ### Kirjoita luokka Sankari tähän.
 
@@ -195,8 +194,8 @@ while sankari.rohkeus > 0:
     time.sleep(0.7)
 
     # Tulostetaan vastaan tulevan peikon tiedot.
-    lista = [Peikko(), Luolapeikko(), Vuorenpeikko()]
-    peikko = random.choices(lista)()
+    lista = random.choice((Peikko, Luolapeikko, Vuorenpeikko))
+    peikko = lista()
     peikon_tiedot = peikko.nimi + " [" + str(peikko.rohkeus) + "]"
     print(f"Vastaan tulee hurja {peikon_tiedot}!")
     time.sleep(1)

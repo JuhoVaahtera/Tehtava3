@@ -10,9 +10,9 @@ class Olento:
 
     :ivar nimi: olennon nimi
     :type nimi: str
-    :ivar rohkeus: olennon rohkeus, arvotaan
+    :ivar rohkeus: olennon rohkeus
     :type rohkeus: int
-    :ivar katseen_voima: olennon katseen voimakkuus, arvotaan
+    :ivar katseen_voima: olennon katseen voimakkuus
     :type katseen_voima: int
 
     Julkiset metodit
